@@ -55,11 +55,12 @@ const todos = (req, res) => {
 	dbTodo
 		.getAllTodos()
 		.then((result) => {
+			console.log(result);
 			res.status(200);
 			res.json({
 				success: true,
 				message: "Todos successfully retrieved!",
-				data: result.rows,
+				data: result,
 			});
 		})
 		.catch((error) => {

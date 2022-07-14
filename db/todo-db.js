@@ -1,11 +1,11 @@
 import pg from "pg";
 
 const pool = new pg.Pool({
-	user: "postgres",
-	host: "localhost",
-	database: "Todo_SA",
-	password: "aravind01",
-	port: 5432,
+	user: process.env.DB_USER,
+	host: process.env.DB_HOST,
+	database: process.env.DB_DATABASE,
+	password: process.env.DB_PASSWORD,
+	port: process.env.DB_PORT,
 });
 
 const dbTodoExists = (id) => {
